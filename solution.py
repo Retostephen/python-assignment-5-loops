@@ -5,13 +5,12 @@ user_db = {
 
 print("""
 Welcome!
-log to Login
-reg to register
+Login or Register
 """)
 
 verification_amount = 1500
 
-user_input = input("Do you want to register: ")
+user_input = input("Do you want to Login or Register: ")
 user_input_lower = user_input.lower()
 
 if user_input_lower == "Login":
