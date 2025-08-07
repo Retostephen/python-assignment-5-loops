@@ -49,12 +49,12 @@ elif user_input_lower == "register":
 #			length = len(confirm_password)
 #			length_word = length * 2
 #			star = length_word * "*"
-			password = f"{confirm_password[0]}{confirm_password[-1]}"
+#			password = f"{confirm_password[0]}{confirm_password[-1]}"
 			balance = float(input("Enter your balance: "))
 			is_verified = False
 
 			user_db.update({create_username: {
-			"password": password,
+			"password": confirm_password,
 			"balance": balance,
 			"is_verified": is_verified
 			}})
@@ -63,8 +63,8 @@ elif user_input_lower == "register":
 
 			verification = input("Do you want to be verified? 'Yes/No' : ")
 			verification = verification.lower()
-			if verification == "Yes":
-				if user_db[create_username]["balance"] >= verfication_amount:
+			if verification == "yes":
+				if user_db[create_username]["balance"] >= verification_amount:
 					user_db[create_username]["balance"] -= verification_amount
 					user_db[create_username]["is_verfied"] = True
 					print(user_db[create_username])
