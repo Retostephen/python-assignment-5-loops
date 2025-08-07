@@ -1,5 +1,3 @@
-
-
 user_db = {
 "reto": {"password": 1234, "balance": 5000, "is_verified": False},
 "scholar": {"password": 5678, "balance": 4000, "is_verified": False,}
@@ -12,7 +10,7 @@ Login or Register
 
 verification_amount = 1500
 
-user_input = input("Do you want to Login or Register: ")
+user_input = input("Do you want to 'Login' or 'Register' (use lower case): ")
 user_input_lower = user_input.lower()
 
 if user_input_lower == "login":
@@ -21,7 +19,7 @@ if user_input_lower == "login":
 		password = int(input("Enter your password: "))
 		if user_db[username]["password"] == password:
 			print("Login successful")
-			verification = input("Do you want to be verified? : ")
+			verification = input("Do you want to be verified? (yes/no): ")
 			verification_lower = verification.lower()
 			if verification_lower == "yes":
 				if user_db[username]["balance"] >= verification_amount:
@@ -61,7 +59,7 @@ elif user_input_lower == "register":
 
 			print(user_db[create_username])
 
-			verification = input("Do you want to be verified? 'Yes/No' : ")
+			verification = input("Do you want to be verified? (yes/no) : ")
 			verification = verification.lower()
 			if verification == "yes":
 				if user_db[create_username]["balance"] >= verification_amount:
@@ -76,50 +74,3 @@ elif user_input_lower == "register":
 			print("Invalid Password")
 else:
 	print("Error, Invalid Syntax")
-
-'''
-users_db = {
-"reto": {"password": 1234, "balance": 5000, "is_verified": False},
-"scholar": {"password": 5678, "balance": 4000, "is_verified": False,}
-	}	
-command = input("Enter login or register: ")
-
-# Your implementation here...
-if command == 'login':
-	user_name = input('Enter user name: ')
-	password = input('Enter password: ')
-	if user_name == users_db[0]['name'] and password == users_db[0]['password']:
-		print(f'SUCCESSFUL LOGIN \n{users_db}')
-	elif user_name == users_db[0]['name'] and password != users_db[0]['password']:
-		print('WRONG PASSWORD')
-	elif password == users_db[0]['password'] and user_name != users_db[0]['name']:
-		print('INVALID USER NAME')
-	else:
-		print('INVALID INFORMATION!')	
-elif command == 'register':
-	user_name = input('Create a user name: ')
-	create_password = input('Create a password: ')
-	balance = float(input('Enter balance: '))
-	is_verified = False
-	if user_name == users_db[0]['name']:
-		print('USERNAME ALREADY EXIST!')
-	else:
-		user2 = {'name': user_name ,'password': create_password , 'balance': balance , 'is_verified': is_verified}
-		users_db.append(user2)
-		print(user2)
-		get_verified = input('Verification option\nverification cost 1500\nEnter yes/no accept/decline verification ')	
-		if get_verified == 'yes':
-			if balance >= verification_amount:
-				user2.update({'is_verified': True })
-				balance = balance - verification_amount
-				user2.update({'balance': balance})
-				print(f'LOGIN SUCCESSFUL\nYour account has been verified and this is your current status:\n{user2}')
-			else:
-				print(f'INSUFFICIENT FUND!\nLOGIN SUCCESSFUL\n{user2}')
-		elif get_verified == 'no':
-			print(f'REGISTRATION SUCCESSFUL:\n{user2}')
-		else:
-			print('INVALID OPTION!')
-else:
-	print('INVALID COMMAND!')
-'''
