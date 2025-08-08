@@ -12,7 +12,7 @@ verification_amount = 1500
 
 user_input = input("Do you want to 'Login' or 'Register' (use lower case): ")
 user_input_lower = user_input.lower()
-'''
+
 if user_input_lower == "login":
 	username = input("Enter your username: ")
 	if username in user_db:
@@ -70,6 +70,6 @@ elif user_input_lower == "register":
 			print("Invalid Password")
 else:
 	print("Error, Invalid Syntax")
-'''
-print(hex(id(user_input)))
-print(hex(id(user_input_lower)))
+
+#print(hex(id(user_input)))
+#print(hex(id(user_input_lower)))
