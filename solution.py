@@ -44,10 +44,6 @@ elif user_input_lower == "register":
 		create_password = input("Enter your password: ")
 		confirm_password = input("Confirm your password: ")
 		if confirm_password == create_password:
-#			length = len(confirm_password)
-#			length_word = length * 2
-#			star = length_word * "*"
-#			password = f"{confirm_password[0]}{confirm_password[-1]}"
 			balance = float(input("Enter your balance: "))
 			is_verified = False
 
